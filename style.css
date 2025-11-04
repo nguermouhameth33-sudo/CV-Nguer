@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contenir {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 1);
+}
+
+.contenir .left_side {
+    position: relative;
+    background: #003147;
+    padding: 40px;
+}
+
+.contenir .right_side {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+}
+
+.image img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profiltext h4 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 600em;
+    line-height: 1.4em;
+}
+
+.profiltext span {
+    color: #fff;
+    font-size: 1em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600em;
+    line-height: 1.4em;
+}
+
+.lang .text {
+    color: #fff;
+}
+
+.lang h4 {
+    color: #fff;
+}
+
+.edu {
+    color: #fff;
+}
+
+.contact {
+    color: #fff;
+}
+
+.edu span {
+    color: #03a9f4;
+}
+
+.edu h6 {
+    color: #afa6a6;
+}
+
+.lang .percent {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: rgb(12, 12, 12);
+    display: block;
+    margin-top: 5px;
+}
+
+.lang .percent div {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: #03a9f4;
+}
+
+.righ-side {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+}
+
+.about {
+    margin-bottom: 50px;
+}
+
+.about:last-child {
+    margin-bottom: 0px;
+}
+
+.title {
+    color: #003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.p {
+    color: #333;
+}
+
+.about .box {
+    display: flex;
+    flex-direction: row;
+}
+
+.about .box .année {
+    min-width: 150px;
+}
+
+.about .box .année h5 {
+    text-transform: uppercase;
+    color: #848484;
+    font-weight: 600;
+}
+
+.about .box .text h4 {
+    text-transform: uppercase;
+    color: #2a7da2;
+    font-size: 16px;
+}
+
+.skill .box {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .percent {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: rgb(146, 140, 140);
+    display: block;
+    margin-top: 5px;
+}
+
+.about-skill .percent div {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: #03a9f4;
+}
+
+
+/* small visual improvements for percent bars */
+
+.percent {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.percent div {
+    height: 100%;
+    background: linear-gradient(90deg, #03a9f4, #2a7da2);
+}
+
+/* percentage label at the end of the bar */
+.percent {
+    position: relative;
+}
+/* percent labels removed (handled by JS previously) */
+
+/* Floating name at top-right */
+.name-float {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    color: #003147;
+    font-weight: 700;
+    background: rgba(255,255,255,0.9);
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* ensure percent container provides correct positioning context */
+.percent {
+    position: relative;
+}
+
+
+/* Responsive rules */
+
+@media (max-width: 900px) {
+    .contenir {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    body {
+        align-items: flex-start;
+        padding: 20px 0;
+    }
+    .contenir .left_side,
+    .contenir .right_side {
+        padding: 20px;
+    }
+    .image img {
+        width: 140px;
+        height: 140px;
+        display: block;
+        margin: 0 auto;
+    }
+    .profiltext h4,
+    .profiltext span {
+        text-align: center;
+    }
+    .about .box {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .about .box .année {
+        min-width: auto;
+        text-align: left;
+    }
+    .loisir ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .contenir {
+        margin: 0;
+        border-radius: 0;
+    }
+    .image img {
+        width: 90px;
+        height: 90px;
+    }
+    .title {
+        font-size: 0.95rem;
+    }
+    .profiltext h4 {
+        font-size: 1rem;
+    }
+    .profiltext span {
+        font-size: 0.85rem;
+    }
+    .loisir ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact .icon {
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    color: #03a9f4;
+}
+
+.about-skill .about-icon {
+    display: inline-block;
+    width: 26px;
+    font-size: 20px;
+    color: #03a9f4;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.loisir ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 0;
+}
+
+.loisir ul li {
+    list-style: none;
+    color: #333;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.loisir ul li .fa {
+    color: #03a9f4;
+    font-size: 18px;
+    width: 20px;
+}
+
+/* Sequential reveal animations (titles, contact, edu, lang) */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hide target elements by default; script will add .seq-visible */
+.profiltext h4, .title, .contact, .edu, .lang {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.seq-visible {
+    animation: fadeUp 1200ms ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .title, .contact, .edu, .lang {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Inline small back-to-top button next to 'cuisiner' */
+/* Back to top fixed button (bottom-right) */
+#backToTop {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #03a9f4, #2a7da2);
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 240ms ease, transform 240ms ease;
+    z-index: 1000;
+}
+
+#backToTop.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#backToTop:focus { outline: 2px solid rgba(255,255,255,0.6); }
